@@ -30,7 +30,7 @@ public class LogServiceImpl implements ILogService {
     @Qualifier("logProducer")
     private KafkaTemplate logKafkaTemplate;
 
-    //@PostConstruct表示该方法只会发生在构造函数之后
+    //加该注解会在项目启动的时候执行该方法，也可以理解为在spring容器初始化的时候执行该方法。
     @PostConstruct
     private void consumerMessage() {
         //System.out.println("consumerMessage 被执行");
